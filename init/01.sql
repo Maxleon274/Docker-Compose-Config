@@ -7,22 +7,22 @@ CREATE TABLE partner
     email       varchar(255)
 );
 
-CREATE TABLE lead
+CREATE TABLE ruv_lead
 (
-    lead_id       BIGINT,
-    status        varchar(255),
+    lead_id       BIGINT PRIMARY KEY,
+    lead_status   varchar(255),
     anrede        varchar(255),
     vorname       varchar(255),
     nachname      varchar(255),
     geburtstag    date,
-    email         varchar(255),
+    email         varchar(255) NOT NULL,
     erstell_ts    timestamp,
     aenderungs_ts timestamp
 );
 
 CREATE TABLE kkh
 (
-    kontakt_id       BIGINT,
+    kontakt_id       BIGINT PRIMARY KEY,
     ersteller        varchar(255),
     aenderer         varchar(255),
     kontaktzeitpunkt timestamp,
@@ -35,7 +35,7 @@ CREATE TABLE kkh
 
 CREATE TABLE hausrat
 (
-    trigger_id         BIGINT,
+    trigger_id         BIGINT PRIMARY KEY,
     zahlungs_intervall int,
     produkt_id         varchar(255),
     sb                 int,
@@ -52,7 +52,7 @@ CREATE TABLE hausrat
 
 CREATE TABLE haftpflicht
 (
-    trigger_id         BIGINT,
+    trigger_id         BIGINT PRIMARY KEY,
     zahlungs_intervall int,
     produkt_id         varchar(255),
     produkt_version    varchar(255),
