@@ -1,3 +1,5 @@
+USE PERSISTENCE_ZONE;
+
 CREATE TABLE partner IF NOT EXISTS
 (
     partner_uid BIGINT,
