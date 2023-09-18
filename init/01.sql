@@ -18,7 +18,7 @@ CREATE TABLE lead
     email         varchar(255),
     erstell_ts    timestamp,
     aenderungs_ts timestamp
-)
+);
 
 CREATE TABLE kkh
 (
@@ -31,7 +31,7 @@ CREATE TABLE kkh
     kontaktgrund     varchar(255),
     kontaktart       varchar(255),
     richtung         varchar(255)
-)
+);
 
 CREATE TABLE hausrat
 (
@@ -47,10 +47,10 @@ CREATE TABLE hausrat
     baustein4          BIGINT,
     baustein5          BIGINT,
     baustein6          BIGINT,
-    baustein7          BIGINT,
-)
+    baustein7          BIGINT
+);
 
-CREATE TABLE haftfplicht
+CREATE TABLE haftpflicht
 (
     trigger_id         BIGINT,
     zahlungs_intervall int,
@@ -64,5 +64,5 @@ CREATE TABLE haftfplicht
     baustein4          BIGINT,
     baustein5          BIGINT,
     baustein6          BIGINT,
-    baustein7          BIGINT,
-)
+    baustein7          BIGINT
+);

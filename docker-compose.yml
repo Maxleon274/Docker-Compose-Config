@@ -74,4 +74,4 @@ services:
     image: adminer
     restart: always
     ports:
-      - "8181:8181"
+      - "8080:8080"
