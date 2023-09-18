@@ -1,4 +1,8 @@
-CREATE TABLE partner
+CREATE DATABASE IF NOT EXISTS PERSISTENCE_ZONE;
+
+USE PERSISTENCE_ZONE;
+
+CREATE TABLE partner IF NOT EXISTS
 (
     partner_uid BIGINT,
     vorname     varchar(255),
@@ -7,7 +11,7 @@ CREATE TABLE partner
     email       varchar(255)
 );
 
-CREATE TABLE lead
+CREATE TABLE lead IF NOT EXISTS
 (
     lead_id       BIGINT,
     status        varchar(255),
@@ -20,7 +24,7 @@ CREATE TABLE lead
     aenderungs_ts timestamp
 );
 
-CREATE TABLE kkh
+CREATE TABLE kkh IF NOT EXISTS
 (
     kontakt_id       BIGINT,
     ersteller        varchar(255),
@@ -33,7 +37,7 @@ CREATE TABLE kkh
     richtung         varchar(255)
 );
 
-CREATE TABLE hausrat
+CREATE TABLE hausrat IF NOT EXISTS
 (
     trigger_id         BIGINT,
     zahlungs_intervall int,
@@ -50,7 +54,7 @@ CREATE TABLE hausrat
     baustein7          BIGINT
 );
 
-CREATE TABLE haftpflicht
+CREATE TABLE haftpflicht IF NOT EXISTS
 (
     trigger_id         BIGINT,
     zahlungs_intervall int,
