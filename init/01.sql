@@ -1,13 +1,13 @@
 CREATE TABLE partner
 (
-    partner_uid BIGINT PRIMARY KEY,
+    customerId BIGINT PRIMARY KEY,
     vorname     varchar(255),
     nachname    varchar(255),
     geburtstag  date,
     email       varchar(255)
 );
 
-CREATE TABLE ruv_lead
+CREATE TABLE lead
 (
     lead_id       BIGINT PRIMARY KEY,
     lead_status   varchar(255),
