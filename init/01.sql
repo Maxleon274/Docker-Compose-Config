@@ -7,7 +7,7 @@ CREATE TABLE partner
     email       varchar(255)
 );
 
-CREATE TABLE lead
+CREATE TABLE lead_table
 (
     lead_id       BIGINT PRIMARY KEY,
     lead_status   varchar(255),
@@ -70,5 +70,5 @@ CREATE TABLE haftpflicht
 INSERT INTO partner (customerId, vorname, nachname, geburtstag, email)
 VALUES (1, 'Moritz', 'Mustermann', '1990-01-01', 'max.mustermann@example.com');
 
-INSERT INTO lead (lead_id, lead_status, anrede, vorname, nachname, geburtstag, email, erstell_ts, aenderungs_ts)
+INSERT INTO lead_table (lead_id, lead_status, anrede, vorname, nachname, geburtstag, email, erstell_ts, aenderungs_ts)
 VALUES (1, 'Aktiv', 'Herr', 'Max', 'Mustermann', '1990-01-01', 'max.mustermann@example.com', CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
