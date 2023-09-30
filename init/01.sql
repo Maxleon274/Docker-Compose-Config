@@ -67,7 +67,7 @@ CREATE TABLE haftpflicht
     baustein7          BIGINT
 );
 
-INSERT INTO partner (customerId, vorname, nachname, geburtstag, email)
+INSERT INTO partner (customer_id, vorname, nachname, geburtstag, email)
 VALUES (1, 'Moritz', 'Mustermann', '1990-01-01', 'moritz.mustermann@example.com');
 
 INSERT INTO lead_table (lead_id, lead_status, anrede, vorname, nachname, geburtstag, email, erstell_ts, aenderungs_ts)
