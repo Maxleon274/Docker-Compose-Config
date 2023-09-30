@@ -20,7 +20,7 @@ CREATE TABLE lead_table
     aenderungs_ts timestamp
 );
 
-CREATE TABLE kkh
+CREATE TABLE kid
 (
     kontakt_id       BIGINT PRIMARY KEY,
     ersteller        varchar(255),
