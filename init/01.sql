@@ -11,7 +11,6 @@ CREATE TABLE lead_table
 (
     lead_id       BIGINT PRIMARY KEY,
     lead_status   varchar(255),
-    anrede        varchar(255),
     vorname       varchar(255),
     nachname      varchar(255),
     geburtstag    date,
@@ -24,9 +23,9 @@ CREATE TABLE kid
 (
     kontakt_id       BIGINT PRIMARY KEY,
     ersteller        varchar(255),
-    aenderer         varchar(255),
     kontaktzeitpunkt timestamp,
-    partner_uid      BIGINT,
+    customer_id      BIGINT,
+    lead_id          BIGINT PRIMARY KEY,
     kontaktkanal     varchar(255),
     kontaktgrund     varchar(255),
     kontaktart       varchar(255),
@@ -71,4 +70,5 @@ INSERT INTO partner (customer_id, vorname, nachname, geburtstag, email)
 VALUES (1, 'Moritz', 'Mustermann', '1990-01-01', 'moritz.mustermann@example.com');
 
 INSERT INTO lead_table (lead_id, lead_status, anrede, vorname, nachname, geburtstag, email, erstell_ts, aenderungs_ts)
-VALUES (1, 'Aktiv', 'Herr', 'Max', 'Mustermann', '1990-01-01', 'max.mustermann@example.com', CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+VALUES (1, 'Aktiv', 'Max', 'Mustermann', '1990-01-01', 'max.mustermann@example.com', CURRENT_TIMESTAMP(),
+        CURRENT_TIMESTAMP());
