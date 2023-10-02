@@ -25,7 +25,7 @@ CREATE TABLE kid
     ersteller        varchar(255),
     kontaktzeitpunkt timestamp,
     customer_id      BIGINT,
-    lead_id          BIGINT PRIMARY KEY,
+    lead_id          BIGINT,
     kontaktkanal     varchar(255),
     kontaktgrund     varchar(255),
     kontaktart       varchar(255),
