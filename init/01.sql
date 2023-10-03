@@ -19,6 +19,10 @@ CREATE TABLE lead_table
     aenderungs_ts timestamp
 );
 
+/*
+ Kid hat viele Steakholder. Daher sollten die anpassungen moeglichst gerin seien,
+ um die Anpassungsaufwaende gering zu halten
+ */
 CREATE TABLE kid
 (
     kontakt_id       BIGINT PRIMARY KEY,
@@ -32,39 +36,55 @@ CREATE TABLE kid
     richtung         varchar(255)
 );
 
-CREATE TABLE hausrat
-(
-    trigger_id         BIGINT PRIMARY KEY,
-    zahlungs_intervall int,
-    produkt_id         varchar(255),
-    sb                 int,
-    plz                int,
-    wohnflaeche        BIGINT,
-    baustein1          BIGINT,
-    baustein2          BIGINT,
-    baustein3          BIGINT,
-    baustein4          BIGINT,
-    baustein5          BIGINT,
-    baustein6          BIGINT,
-    baustein7          BIGINT
-);
-
 CREATE TABLE haftpflicht
 (
-    trigger_id         BIGINT PRIMARY KEY,
-    zahlungs_intervall int,
-    produkt_id         varchar(255),
-    produkt_version    varchar(255),
-    versicherte_person varchar(255),
-    sb                 int,
-    baustein1          BIGINT,
-    baustein2          BIGINT,
-    baustein3          BIGINT,
-    baustein4          BIGINT,
-    baustein5          BIGINT,
-    baustein6          BIGINT,
-    baustein7          BIGINT
+    kid_id BIGINT PRIMARY KEY,
+    produkt_id BIGINT
 );
+
+
+/*
+Für jede sparte einen einzelnen Table, da jede aus verschiedenen Bausteinen bestehen kann
+ */
+CREATE TABLE hausrat
+(
+    kid_id BIGINT PRIMARY KEY,
+    produkt_id BIGINT
+);
+
+CREATE TABLE versicherte_person
+(
+    id                 BIGINT PRIMARY KEY,
+    kid_id         BIGINT,
+    versicherte_person varchar(255)
+);
+
+CREATE TABLE versichertes_objekt
+(
+    id           BIGINT PRIMARY KEY,
+    kid_id   BIGINT,
+    postleitzahl varchar(255),
+    wohnflaeche  BIGINT
+);
+
+CREATE TABLE bausteine
+(
+    id          BIGINT PRIMARY KEY,
+    kid_id  BIGINT,
+    baustein    varchar(255),
+    eigenschaft varchar(255)
+);
+
+CREATE TABLE produkt
+(
+    id                BIGINT PRIMARY KEY,
+    kid_id        BIGINT,
+    produkt_kennung   varchar(255),
+    produkt_version   varchar(255),
+    zahlungsintervall varchar(255),
+    selbstbeteiligung varchar(255),
+);
+
 
 INSERT INTO partner (customer_id, vorname, nachname, geburtstag, email)
 VALUES (1, 'Moritz', 'Mustermann', '1990-01-01', 'moritz.mustermann@example.com');
