@@ -38,7 +38,7 @@ CREATE TABLE kid
 
 CREATE TABLE haftpflicht
 (
-    kid_id BIGINT PRIMARY KEY,
+    kid_id     BIGINT PRIMARY KEY,
     produkt_id BIGINT
 );
 
@@ -48,21 +48,21 @@ Für jede sparte einen einzelnen Table, da jede aus verschiedenen Bausteinen bes
  */
 CREATE TABLE hausrat
 (
-    kid_id BIGINT PRIMARY KEY,
+    kid_id     BIGINT PRIMARY KEY,
     produkt_id BIGINT
 );
 
 CREATE TABLE versicherte_person
 (
     id                 BIGINT PRIMARY KEY,
-    kid_id         BIGINT,
+    kid_id             BIGINT,
     versicherte_person varchar(255)
 );
 
 CREATE TABLE versichertes_objekt
 (
     id           BIGINT PRIMARY KEY,
-    kid_id   BIGINT,
+    kid_id       BIGINT,
     postleitzahl varchar(255),
     wohnflaeche  BIGINT
 );
@@ -70,7 +70,7 @@ CREATE TABLE versichertes_objekt
 CREATE TABLE bausteine
 (
     id          BIGINT PRIMARY KEY,
-    kid_id  BIGINT,
+    kid_id      BIGINT,
     baustein    varchar(255),
     eigenschaft varchar(255)
 );
@@ -78,11 +78,11 @@ CREATE TABLE bausteine
 CREATE TABLE produkt
 (
     id                BIGINT PRIMARY KEY,
-    kid_id        BIGINT,
+    kid_id            BIGINT,
     produkt_kennung   varchar(255),
     produkt_version   varchar(255),
     zahlungsintervall varchar(255),
-    selbstbeteiligung varchar(255),
+    selbstbeteiligung varchar(255)
 );
 
 
