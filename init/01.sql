@@ -60,7 +60,7 @@ CREATE TABLE bausteine
     eigenschaft varchar(255)
 );
 
-CREATE TABLE produkt
+CREATE TABLE vorgang
 (
     id                BIGINT PRIMARY KEY,
     kid_id            BIGINT,
