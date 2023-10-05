@@ -82,7 +82,8 @@ CREATE TABLE produkt
     produkt_kennung   varchar(255),
     produkt_version   varchar(255),
     zahlungsintervall varchar(255),
-    selbstbeteiligung varchar(255)
+    selbstbeteiligung varchar(255),
+    sparte            varchar(255)
 );
 
 
