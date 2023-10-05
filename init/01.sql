@@ -36,21 +36,6 @@ CREATE TABLE kid
     richtung         varchar(255)
 );
 
-CREATE TABLE haftpflicht
-(
-    kid_id     BIGINT PRIMARY KEY,
-    produkt_id BIGINT
-);
-
-
-/*
-Für jede sparte einen einzelnen Table, da jede aus verschiedenen Bausteinen bestehen kann
- */
-CREATE TABLE hausrat
-(
-    kid_id     BIGINT PRIMARY KEY,
-    produkt_id BIGINT
-);
 
 CREATE TABLE versicherte_person
 (
