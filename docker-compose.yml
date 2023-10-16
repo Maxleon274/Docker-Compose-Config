@@ -77,10 +77,10 @@ services:
     expose:
       - '3306'
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root27041996
       MYSQL_DATABASE: mydb
       MYSQL_USER: user
-      MYSQL_PASSWORD: 123456
+      MYSQL_PASSWORD: 27041996
 
     volumes:
       - ./init:/docker-entrypoint-initdb.d
