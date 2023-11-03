@@ -1,3 +1,16 @@
+CREATE TABLE salesforce_nbo
+(
+    nbo_id                         varchar(255) PRIMARY KEY,
+    eingangskanal                  varchar(255),
+    customer_communication_consent varchar(255),
+    customer_id                    varchar(255),
+    nbo_content                    varchar(255),
+    offer_id                       varchar(255),
+    offer_title                    varchar(255),
+    offer_category                 varchar(255)
+
+);
+
 CREATE TABLE partner
 (
     customer_id BIGINT PRIMARY KEY,
