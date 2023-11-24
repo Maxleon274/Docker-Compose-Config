@@ -9,7 +9,7 @@ CREATE TABLE partner
 
 CREATE TABLE lead_table
 (
-    lead_id       BIGINT PRIMARY KEY,
+    lead_id       varchar(255) PRIMARY KEY,
     lead_status   varchar(255),
     vorname       varchar(255),
     nachname      varchar(255),
@@ -39,14 +39,14 @@ CREATE TABLE kid
 
 CREATE TABLE versicherte_person
 (
-    id                 BIGINT PRIMARY KEY,
+    id                 varchar(255) PRIMARY KEY,
     kid_id             BIGINT,
     versicherte_person varchar(255)
 );
 
 CREATE TABLE versichertes_objekt
 (
-    id           BIGINT PRIMARY KEY,
+    id           varchar(255) PRIMARY KEY,
     kid_id       BIGINT,
     postleitzahl varchar(255),
     wohnflaeche  BIGINT
@@ -54,7 +54,7 @@ CREATE TABLE versichertes_objekt
 
 CREATE TABLE bausteine
 (
-    id          BIGINT PRIMARY KEY,
+    id          varchar(255) PRIMARY KEY,
     kid_id      BIGINT,
     baustein    varchar(255),
     eigenschaft varchar(255)
